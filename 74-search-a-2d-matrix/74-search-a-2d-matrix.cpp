@@ -14,6 +14,7 @@ public:
                 // target found at index k
                 return true;
             }
+            //modify binary search a little
             if (matrix[r][0] < target && target> matrix[r][matrix[0].size()-1]) a = r+1;
             else if(matrix[r][0] < target && target<= matrix[r][matrix[0].size()-1]) break;
             else b = r-1;
