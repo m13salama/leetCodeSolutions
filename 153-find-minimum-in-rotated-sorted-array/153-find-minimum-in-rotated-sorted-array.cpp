@@ -1,17 +1,20 @@
 class Solution {
 public:
     int findMin(vector<int>& nums) {
-        int pivot = get_pivot(nums);
-        int res = nums[(pivot+1)%nums.size()];
-        return res;
+        return search(nums);
     }
-    int get_pivot(vector<int>& nums){
+    int search(vector<int>& nums){
         int l=0, r=nums.size()-1;
-        while(l<r){
-            if(nums[l] > nums[l+1]) return l;
-            if(nums[r-1] > nums[r]) return r-1;
-            l++; r--;
+        int mid=0;
+        int mini=0;
+        while(l<=r){
+            mid = (l+r)/2;
+            mini = nums[mid];
+            if(mid !=0 && mini < nums[mid-1]) return mini;
+            else if(mini > nums[r]) l = mid+1;
+            else if(mini < nums[l]) r = mid-1;
+            else r=mid-1;
         }
-        return -1;
+        return nums[0];
     }
 };
