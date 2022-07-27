@@ -10,11 +10,11 @@ public:
     string reverseOnlyLetters(string s) {
         int l=0, r=s.size()-1;
         while(l < r){
-            if(iswalpha(s[l]) && iswalpha(s[r])){
+            if(isalpha(s[l]) && isalpha(s[r])){
                 swap(s[l],s[r]);
                 l++; r--;
-            }else if(!iswalpha(s[l])) l++;
-            else if(!iswalpha(s[r])) r--;
+            }else if(!isalpha(s[l])) l++;
+            else if(!isalpha(s[r])) r--;
         }
         return s;
     }
