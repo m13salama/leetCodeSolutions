@@ -28,7 +28,7 @@ public:
         while(list1 != nullptr){
             ListNode* temp = new ListNode(list1->val);
             ans->next = temp;
-                ans = ans->next;
+            ans = ans->next;
             list1 = list1->next;
         }
         while(list2 != nullptr){
