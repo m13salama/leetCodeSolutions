@@ -12,7 +12,6 @@ public:
                 p_hay++;
                 p_needle++;
             }else{
-                cout << p_needle << "  " << p_hay << endl;
                 p_needle = 0;
                 p_hay = res+1;
                 res = p_hay;
