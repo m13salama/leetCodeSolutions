@@ -5,13 +5,6 @@ class Solution {
 public:
     int arrangeCoins(int n) {
         init;
-        int i=1, res=0;
-        long long int mid;
-        while(n-i >= 0){
-            n -= i;
-            i++;
-            res++;
-        }
-        return res;
+        return (int)(sqrt(2 * (long)n + 0.25) - 0.5);
     }
 };
