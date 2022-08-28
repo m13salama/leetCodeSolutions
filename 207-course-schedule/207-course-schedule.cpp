@@ -26,7 +26,6 @@ public:
         for(int i=0; i<pre[course].size(); i++){
             if (!dfs(pre, pre[course][i])) return 0;
         }
-        visited[course]--;
         pre[course].clear();
         return 1;
     }
