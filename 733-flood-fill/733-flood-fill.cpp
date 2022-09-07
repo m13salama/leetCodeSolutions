@@ -1,24 +1,25 @@
 class Solution {
 public:
-    
-    void DFS(vector<vector<int>>& image, int sr, int sc, int newColor,int color, vector<vector<int>>& visited)
-    {
-        //boundary condition
-        if( sr>=image.size()||sc>=image[0].size()||sr<0||sc<0) return;
-        //you reach pixel which is different or visited before
-        if( image[sr][sc]!=color || visited[sr][sc]== 1) return;
-        //recolor the pixel
-        image[sr][sc]=newColor;
-        visited[sr][sc] = 1;
-       //recusion calls for 4 direction in matrix
-        DFS(image,sr,sc+1,newColor,color, visited);
-        DFS(image,sr,sc-1,newColor,color, visited);
-        DFS(image,sr+1,sc,newColor,color, visited);
-        DFS(image,sr-1,sc,newColor,color, visited);
-        }
-    vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int newColor) {
-        vector<vector<int>> visited( image.size() , vector<int> (image[0].size(), 0)); 
-        DFS(image,sr,sc,newColor, image[sr][sc], visited);
-        return image;   
+    int cur_color; 
+    int fill_color;
+
+    vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color) {
+        cur_color = image[sr][sc];
+        fill_color = color;
+        if (fill_color == cur_color) return image;
+        dfs(image, sr, sc);
+        return image;
+    }
+    void dfs(vector<vector<int>>& image, int sr, int sc){
+        if(sr>= image.size() || sc>= image[0].size() || sr<0 || sc<0) return;
+        if(image[sr][sc] != cur_color) return;
+
+        image[sr][sc] = fill_color;
+
+        dfs(image, sr-1, sc);
+        dfs(image, sr, sc+1);
+        dfs(image, sr+1, sc);
+        dfs(image, sr, sc-1);
+
     }
 };
