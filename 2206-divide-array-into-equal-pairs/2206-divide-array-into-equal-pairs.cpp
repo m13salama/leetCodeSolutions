@@ -12,9 +12,7 @@ public:
         
         for(auto x: momo){
             if(x.second % 2) return false;
-            else res += x.second/2;
         }
-        if(res == n/2)return true;
-        return false;
+        return true;
     }
 };
