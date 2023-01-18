@@ -3,6 +3,7 @@
 class Solution {
 public:
     bool canJump(vector<int>& nums) {
+        init;
         int n = nums.size();
         int max_ava = nums[0]+1;
         
