@@ -7,7 +7,6 @@ public:
         int n = nums.size();
         int max_ava = nums[0]+1;
         
-        if(n == 1) return true;
         
         for(int i=0; i<max_ava; i++){
             max_ava = max(max_ava, i+nums[i]+1);
