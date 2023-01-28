@@ -6,9 +6,10 @@ public:
         map<int, int> momo;
         int n=nums.size();
         
+        int x;
         for(int i=0; i<n; i++){
-            momo[nums[i]]++;
-            if(momo[nums[i]] > 1) return true;
+            x = ++momo[nums[i]];
+            if(x > 1) return true;
         }
         
         return false;
