@@ -1,6 +1,8 @@
+#define init cin.tie(0), cout.tie(0), cin.sync_with_stdio(0), cout.sync_with_stdio(0)
 class Solution {
 public:
     vector<int> topKFrequent(vector<int>& nums, int k) {
+        init;
         vector<vector<int>> v(nums.size()+1);
         vector<int> res;
         map<int,int> m;
