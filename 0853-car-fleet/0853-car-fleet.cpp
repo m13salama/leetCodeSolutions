@@ -15,14 +15,12 @@ public:
         int res=0;
         for(int i=n-1; i>=0; i--){
             x = (target-cars[i].first)/(float)cars[i].second;
-            cout << x << endl;
             if(st.size() > 0 && st.top() < x){
                 res++;
                 st.push(x);
             }else if(st.size() == 0) st.push(x);
             
         }
-        cout << endl;
         return res+1;
     }
 };
